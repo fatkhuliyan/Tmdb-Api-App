@@ -21,7 +21,7 @@ window.fn.load = function(page) {
 function scan() {
   cordova.plugins.barcodeScanner.scan(
     function (result) {
-      alert("We got a barcode \n"+"ID Film: "+result.text+"\n"+"Format Barcode: "+result.format+"\n"+"Cancelled: "+result.cancelled);
+      alert("We got a barcode \n"+"ID Film: "+result.text+"\n");
       document.getElementById('input_scan').value = result.text;
        let url = `https://api.themoviedb.org/3/movie/${result.text}?api_key=YOUR_API_KEY`;
        $.ajax({
